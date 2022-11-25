@@ -7,7 +7,7 @@ checkNumberBtn.addEventListener("click", isLucky);
 
 function getRightDob(dob){
     dob = dob.replaceAll("-", "");
-    return Number(dob);
+    return dob;
 }
 
 function showMsg(msg){
@@ -15,8 +15,18 @@ function showMsg(msg){
     msgP.textContent = msg;
 }
 
+function findSum(numberDob){
+    var sum = 0;
+    for(i in numberDob){
+        sum += Number(i);
+    }
+    return sum;
+}
+
 function isDivisible(numberDob, luckyNumber){
-    if(numberDob % luckyNumber === 0){
+    const numberDobSum = findSum(numberDob);
+
+    if(numberDobSum % luckyNumber === 0){
         showMsg(`🎉 ${luckyNumber} is a lucky number!!`);
     }else{
         showMsg(`👎 ${luckyNumber} is not a lucky number!!`);
