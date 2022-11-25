@@ -40,3 +40,13 @@ button{
 #msg{
     display: none;
 }
+
+@media screen and (max-width: 768px){
+    body{
+        font-size: 1rem;
+    }
+
+    input{
+        width: 80vw;
+    }
+}
