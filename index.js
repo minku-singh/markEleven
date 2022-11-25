@@ -17,7 +17,7 @@ function showMsg(msg){
 
 function isDivisible(numberDob, luckyNumber){
     if(numberDob % luckyNumber === 0){
-        showMsg(`🎉${luckyNumber} is a lucky number!!`);
+        showMsg(`🎉 ${luckyNumber} is a lucky number!!`);
     }else{
         showMsg(`👎 ${luckyNumber} is not a lucky number!!`);
     }
@@ -27,6 +27,11 @@ function isLucky(){
     const dob = dobIp.value;
     const luckyNumber = luckyNumberIp.value;
 
-    const numberDob = getRightDob(dob);
-    isDivisible(numberDob, luckyNumber);
+    if(dob === "" || luckyNumber === ""){
+        showMsg("👓 Enter a valid data!!");
+    }else{
+        const numberDob = getRightDob(dob);
+        isDivisible(numberDob, luckyNumber);
+    }
+
 }
